@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AuctionsController < ApplicationController
   def create
     p = params.require(:auction).permit(:exhibitor, :title)

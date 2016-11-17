@@ -5,6 +5,7 @@ AllCops:
     - vendor/**/*
     - db/schema.rb
     - bin/**
+    - ruboty/vendor/**/*
   DisplayCopNames: true
   TargetRubyVersion: 2.3
 
