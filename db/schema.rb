@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20161113062901) do
     t.integer  "auction_id", null: false
     t.datetime "bidded_at",  null: false
     t.integer  "bidder_id",  null: false
+    t.integer  "amount",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["auction_id", "bidded_at"], name: "index_bids_on_auction_id_and_bidded_at"

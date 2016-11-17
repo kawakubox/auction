@@ -3,8 +3,9 @@ class CreateBids < ActiveRecord::Migration[5.0]
   def change
     create_table :bids do |t|
       t.integer :auction_id,  null: false
-      t.timestamp :bidded_at, null: false
+      t.timestamp :bidded_at, null: false, default: -> { 'CURRENT_TIMESTAMP' }
       t.integer :bidder_id,   null: false
+      t.integer :amount,      null: false
 
       t.timestamps
 

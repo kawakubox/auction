@@ -6,4 +6,5 @@ class Bid < ApplicationRecord
   validates :bidded_at, presence: true
   validates :auction, presence: true
   validates :bidder, presence: true
+  validates :amount, numericality: { greater_than: 0 }
 end
