@@ -1,3 +1,9 @@
+PATH
+  remote: /Users/kawakubox/Workspace/ruboty-auctioneer
+  specs:
+    ruboty-auctioneer (0.1.0)
+      ruboty
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,6 +60,7 @@ PLATFORMS
 
 DEPENDENCIES
   ruboty
+  ruboty-auctioneer!
   ruboty-slack_rtm
 
 BUNDLED WITH
