@@ -3,6 +3,8 @@ module Api
     class UserResource < JSONAPI::Resource
       attributes :slack_id
       attributes :name
+
+      filters :slack_id
     end
   end
 end
