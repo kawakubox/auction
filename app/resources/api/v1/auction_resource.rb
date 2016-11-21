@@ -3,7 +3,7 @@ module Api
     class AuctionResource < JSONAPI::Resource
       attributes :title
 
-      has_one :exhibitor
+      has_one :exhibitor, class_name: 'User'
       has_many :bids
     end
   end

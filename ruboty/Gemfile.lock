@@ -2,6 +2,7 @@ PATH
   remote: /Users/kawakubox/Workspace/ruboty-auctioneer
   specs:
     ruboty-auctioneer (0.1.0)
+      munson
       ruboty
 
 GEM
@@ -28,6 +29,9 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    munson (0.3.1)
+      faraday
+      faraday_middleware
     ruboty (1.2.4)
       activesupport
       bundler

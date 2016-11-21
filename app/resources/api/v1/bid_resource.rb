@@ -4,7 +4,7 @@ module Api
       attributes :bidded_at, :amount
 
       has_one :auction
-      has_one :bidder
+      has_one :bidder, class_name: 'User'
     end
   end
 end
