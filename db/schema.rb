@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20161113062901) do
     t.integer  "state",          default: 0, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["exhibitor_id"], name: "index_auctions_on_exhibitor_id"
   end
 
   create_table "bids", force: :cascade do |t|

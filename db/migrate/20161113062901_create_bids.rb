@@ -5,11 +5,7 @@ class CreateBids < ActiveRecord::Migration[5.0]
       t.integer :auction_id, null: false
       t.string  :bidder_id,  null: false
       t.integer :price,      null: false
-
       t.timestamps
-
-      t.foreign_key :auctions
-      t.foreign_key :users, column: :bidder_id
 
       t.index [:auction_id, :created_at]
     end
