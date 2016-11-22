@@ -6,6 +6,5 @@ RSpec.describe User, type: :model do
 
   it { is_expected.to be_respond_to :bids }
 
-  it { is_expected.to be_invalid_on(:slack_id).with(nil) }
   it { is_expected.to be_invalid_on(:name).with(nil) }
 end
