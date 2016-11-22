@@ -8,8 +8,8 @@ class CreateBids < ActiveRecord::Migration[5.0]
 
       t.timestamps
 
-      t.foreign_key :auction
-      t.foreign_key :user,    column: :bidder_id
+      t.foreign_key :auctions
+      t.foreign_key :users, column: :bidder_id
 
       t.index [:auction_id, :created_at]
     end
