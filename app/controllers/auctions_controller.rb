@@ -2,7 +2,7 @@
 class AuctionsController < ApplicationController
   def create
     p = params.require(:auction).permit(:exhibitor, :title)
-    user = User.find_by(slack_id: p[:exhibitor])
+    user = User.find(p[:exhibitor])
     raise ActiveRecord::RecordNotFound if user.blank?
     @auction = Auction.create(exhibitor_id: user.id, title: p[:title])
     respond_to do |format|
