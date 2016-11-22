@@ -4,6 +4,10 @@ class Auction < ApplicationRecord
 
   has_many :bids
 
+  enum state: { closed: 0, opened: 1, accepted: 2 }
+
   validates :title, presence: true
   validates :exhibitor, presence: true
+  validates :starting_price, numericality: { only_integer: true }
+  validates :state, inclusion: { in: Auction.states }
 end
