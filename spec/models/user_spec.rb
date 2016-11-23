@@ -12,4 +12,9 @@ RSpec.describe User, type: :model do
     is_expected.to be_invalid_on(:slack_id)
   end
   it { is_expected.to be_invalid_on(:name).with(nil) }
+
+  it 'can find by slack_id' do
+    user = FactoryGirl.create(:user)
+    expect(User.find(user.slack_id)).to eq user
+  end
 end
