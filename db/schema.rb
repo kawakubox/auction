@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(version: 20161113062901) do
     t.index ["auction_id", "created_at"], name: "index_bids_on_auction_id_and_created_at"
   end
 
-  create_table "users", id: :string, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string   "slack_id",   null: false
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id"], name: "sqlite_autoindex_users_1", unique: true
+    t.index ["slack_id"], name: "index_users_on_slack_id", unique: true
   end
 
 end
