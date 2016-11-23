@@ -13,20 +13,22 @@
 ActiveRecord::Schema.define(version: 20161113062901) do
 
   create_table "auctions", force: :cascade do |t|
-    t.string   "title",        null: false
-    t.integer  "exhibitor_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "title",                      null: false
+    t.string   "exhibitor_id",               null: false
+    t.integer  "starting_price", default: 0, null: false
+    t.integer  "state",          default: 0, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["exhibitor_id"], name: "index_auctions_on_exhibitor_id"
   end
 
   create_table "bids", force: :cascade do |t|
     t.integer  "auction_id", null: false
-    t.datetime "bidded_at",  null: false
-    t.integer  "bidder_id",  null: false
-    t.integer  "amount",     null: false
+    t.string   "bidder_id",  null: false
+    t.integer  "price",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["auction_id", "bidded_at"], name: "index_bids_on_auction_id_and_bidded_at"
+    t.index ["auction_id", "created_at"], name: "index_bids_on_auction_id_and_created_at"
   end
 
   create_table "users", force: :cascade do |t|

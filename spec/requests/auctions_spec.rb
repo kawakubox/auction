@@ -5,7 +5,7 @@ RSpec.describe 'Auctions Request' do
   let!(:exhibitor) { FactoryGirl.create(:user) }
   let(:title) { FFaker::Movie.title }
   let(:params) do
-    { auction: { exhibitor: exhibitor.slack_id, title: title } }
+    { auction: { exhibitor: exhibitor.id, title: title } }
   end
   it 'returns :created' do
     post '/auctions.json', params: params
