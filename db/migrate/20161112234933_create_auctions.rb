@@ -7,7 +7,7 @@ class CreateAuctions < ActiveRecord::Migration[5.0]
       t.integer :starting_price, null: false, default: 0
       t.integer :state,          null: false, default: 0
       t.timestamps
- 
+
       t.index [:exhibitor_id]
     end
   end
